@@ -41,6 +41,21 @@
             app:useMaterialThemeColors="true" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/face_detection_results_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/white"
+        android:background="#80000000"
+        android:padding="8dp"
+        android:text="Face Detection Results Here"
+        app:layout_constraintTop_toBottomOf="@id/top_controls"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <LinearLayout
         android:id="@+id/bottom_controls"
         android:layout_width="0dp"

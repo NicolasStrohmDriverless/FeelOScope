@@ -3,6 +3,7 @@ package com.example.feeloscope.services;
 import android.graphics.Rect;
 import android.util.Log;
 import androidx.annotation.NonNull;
+import androidx.camera.core.ImageProxy;
 
 import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.face.Face;
@@ -21,7 +22,6 @@ public class FaceDetectionHelper {
     public FaceDetectionHelper(FaceDetectionListener listener) {
         this.listener = listener;
 
-        // Configure ML Kit Face Detector (same options as before)
         FaceDetectorOptions highAccuracyOpts =
                 new FaceDetectorOptions.Builder()
                         .setPerformanceMode(FaceDetectorOptions.PERFORMANCE_MODE_ACCURATE)
@@ -33,69 +33,33 @@ public class FaceDetectionHelper {
         Log.d(TAG, "FaceDetectionHelper initialized.");
     }
 
-    public void process(InputImage image) {
+    public void process(InputImage image, ImageProxy imageProxy) { // Added imageProxy parameter
         if (faceDetector == null) {
             Log.e(TAG, "FaceDetector is not initialized.");
             if (listener != null) {
-                listener.onError(new IllegalStateException("FaceDetector not initialized."));
+                // Pass imageProxy to onError and ensure it's closed there
+                listener.onError(new IllegalStateException("FaceDetector not initialized."), imageProxy);
             }
             return;
         }
         faceDetector.process(image)
                 .addOnSuccessListener(faces -> {
                     Log.d(TAG, "Number of faces detected: " + faces.size());
+                    // Detailed logging can be kept or removed as needed
                     for (Face face : faces) {
                         Rect bounds = face.getBoundingBox();
                         Log.d(TAG, "Face bounds: " + bounds.flattenToString());
-
-                        if (face.getTrackingId() != null) {
-                            int id = face.getTrackingId();
-                            Log.d(TAG, "Face tracking ID: " + id);
-                        }
-
-                        float rotY = face.getHeadEulerAngleY(); // Head is rotated to the right rotY degrees
-                        float rotZ = face.getHeadEulerAngleZ(); // Head is tilted sideways rotZ degrees
-                        Log.d(TAG, "Head rotation Y: " + rotY + ", Z: " + rotZ);
-
-                        // If classification was enabled:
-                        if (face.getSmilingProbability() != null) {
-                            float smileProb = face.getSmilingProbability();
-                            Log.d(TAG, "Smiling probability: " + smileProb);
-                        }
-                        if (face.getLeftEyeOpenProbability() != null) {
-                            float leftEyeOpenProb = face.getLeftEyeOpenProbability();
-                            Log.d(TAG, "Left eye open probability: " + leftEyeOpenProb);
-                        }
-                        if (face.getRightEyeOpenProbability() != null) {
-                            float rightEyeOpenProb = face.getRightEyeOpenProbability();
-                            Log.d(TAG, "Right eye open probability: " + rightEyeOpenProb);
-                        }
-
-                        // If landmark detection was enabled:
-                        FaceLandmark leftEar = face.getLandmark(FaceLandmark.LEFT_EAR);
-                        if (leftEar != null) {
-                            Log.d(TAG, "Left ear position: " + leftEar.getPosition().toString());
-                        }
-                        FaceLandmark rightEar = face.getLandmark(FaceLandmark.RIGHT_EAR);
-                        if (rightEar != null) {
-                            Log.d(TAG, "Right ear position: " + rightEar.getPosition().toString());
-                        }
-                        FaceLandmark noseBase = face.getLandmark(FaceLandmark.NOSE_BASE);
-                        if (noseBase != null) {
-                            Log.d(TAG, "Nose base position: " + noseBase.getPosition().toString());
-                        }
-                        // Add more landmark logging as needed...
+                        // Add other specific logging if still necessary
                     }
                     
-                    // Notify the listener after logging the details
                     if (listener != null) {
-                        listener.onFacesDetected(faces, image);
+                        listener.onFacesDetected(faces, image, imageProxy); // Pass imageProxy
                     }
                 })
                 .addOnFailureListener(e -> {
                     Log.e(TAG, "Face detection failed: " + e.getMessage(), e);
                     if (listener != null) {
-                        listener.onError(e);
+                        listener.onError(e, imageProxy); // Pass imageProxy
                     }
                 });
     }
