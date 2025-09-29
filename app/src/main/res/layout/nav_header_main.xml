@@ -10,10 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="24dp"
-        app:cardBackgroundColor="@color/brand_surface_translucent"
+        app:cardBackgroundColor="@color/surface_card_background"
         app:cardCornerRadius="28dp"
         app:cardElevation="0dp"
-        app:strokeColor="@color/brand_surface_stroke"
+        app:strokeColor="@color/surface_card_stroke"
         app:strokeWidth="1dp">
 
         <LinearLayout
@@ -30,7 +30,7 @@
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/logo_ohm"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlayFeelOScope"
-                app:strokeColor="@color/brand_surface_stroke"
+                app:strokeColor="@color/surface_card_stroke"
                 app:strokeWidth="1dp" />
 
             <TextView
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/nav_header_title"
-                android:textColor="@color/text_primary_on_dark"
+                android:textColor="@color/surface_card_text_primary"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="@string/nav_header_subtitle"
-                android:textColor="@color/text_secondary_on_dark"
+                android:textColor="@color/surface_card_text_secondary"
                 android:textSize="14sp" />
 
             <TextView
@@ -59,20 +59,20 @@
                 android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:text="@string/nav_header_tagline"
-                android:textColor="@color/text_secondary_on_dark"
+                android:textColor="@color/surface_card_text_secondary"
                 android:textSize="14sp" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/nav_header_status_chip"
-            style="@style/Widget.MaterialComponents.Chip.Assist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/nav_header_status"
-            android:textColor="@color/text_secondary_on_dark"
-            app:chipBackgroundColor="@color/chip_background_tint"
-            app:chipIcon="@drawable/ic_menu_camera"
-                app:chipIconTint="@color/text_secondary_on_dark" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/nav_header_status_chip"
+                style="@style/Widget.MaterialComponents.Chip.Assist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/nav_header_status"
+                android:textColor="@color/surface_chip_text"
+                app:chipBackgroundColor="@color/surface_chip_background"
+                app:chipIcon="@drawable/ic_menu_camera"
+                app:chipIconTint="@color/surface_chip_icon_tint" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 </FrameLayout>

@@ -31,12 +31,12 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:contentInsetStartWithNavigation="0dp"
             app:logo="@drawable/logo_ohm"
-            app:navigationIconTint="@color/text_primary_on_dark"
+            app:navigationIconTint="@color/toolbar_icon_tint"
             app:subtitle="@string/app_bar_subtitle"
-            app:subtitleTextColor="@color/text_secondary_on_dark"
+            app:subtitleTextColor="@color/toolbar_text_secondary"
             app:title="@string/app_name"
             app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            app:titleTextColor="@color/text_primary_on_dark" />
+            app:titleTextColor="@color/toolbar_text_primary" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -52,7 +52,7 @@
         android:contentDescription="@string/toggle_theme"
         app:backgroundTint="@color/accent_mint"
         app:borderWidth="0dp"
-        app:rippleColor="@color/chip_background_tint"
+        app:rippleColor="@color/surface_chip_background"
         app:srcCompat="@drawable/ic_moon"
         app:tint="@color/text_primary_on_dark" />
 

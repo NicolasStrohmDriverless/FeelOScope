@@ -37,13 +37,13 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="24dp"
         android:padding="20dp"
-        app:cardBackgroundColor="@color/brand_surface_translucent"
+        app:cardBackgroundColor="@color/surface_card_background"
         app:cardCornerRadius="26dp"
         app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="@color/brand_surface_stroke"
+        app:strokeColor="@color/surface_card_stroke"
         app:strokeWidth="1dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,7 +55,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/home_title"
-                android:textColor="@color/text_primary_on_dark"
+                android:textColor="@color/surface_card_text_primary"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/home_tagline"
-                android:textColor="@color/text_secondary_on_dark"
+                android:textColor="@color/surface_card_text_secondary"
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/home_toggle_hint"
-                android:textColor="@color/text_secondary_on_dark"
+                android:textColor="@color/surface_card_text_secondary"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@id/ai_toggle_switch"
                 app:layout_constraintStart_toStartOf="parent"
@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:text="@string/ai_toggle_label"
-                android:textColor="@color/text_primary_on_dark"
+                android:textColor="@color/surface_card_text_primary"
                 android:textStyle="bold"
                 android:checked="false"
                 android:showText="false"
@@ -117,11 +117,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:text="@string/home_chip_live"
-                    android:textColor="@color/text_secondary_on_dark"
-                    app:chipBackgroundColor="@color/chip_background_tint"
+                    android:textColor="@color/surface_chip_text"
+                    app:chipBackgroundColor="@color/surface_chip_background"
                     app:chipIcon="@drawable/ic_menu_camera"
-                    app:chipIconTint="@color/text_secondary_on_dark"
-                    app:chipStrokeColor="@color/brand_surface_stroke"
+                    app:chipIconTint="@color/surface_chip_icon_tint"
+                    app:chipStrokeColor="@color/surface_card_stroke"
                     app:chipStrokeWidth="1dp" />
 
                 <com.google.android.material.chip.Chip
@@ -130,11 +130,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/home_chip_guided"
-                    android:textColor="@color/text_secondary_on_dark"
-                    app:chipBackgroundColor="@color/chip_background_tint"
+                    android:textColor="@color/surface_chip_text"
+                    app:chipBackgroundColor="@color/surface_chip_background"
                     app:chipIcon="@drawable/ic_menu_slideshow"
-                    app:chipIconTint="@color/text_secondary_on_dark"
-                    app:chipStrokeColor="@color/brand_surface_stroke"
+                    app:chipIconTint="@color/surface_chip_icon_tint"
+                    app:chipStrokeColor="@color/surface_card_stroke"
                     app:chipStrokeWidth="1dp" />
             </com.google.android.material.chip.ChipGroup>
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -148,13 +148,13 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="32dp"
         android:padding="24dp"
-        app:cardBackgroundColor="@color/brand_surface_translucent"
+        app:cardBackgroundColor="@color/surface_card_background"
         app:cardCornerRadius="32dp"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:strokeColor="@color/brand_surface_stroke"
+        app:strokeColor="@color/surface_card_stroke"
         app:strokeWidth="1dp">
 
         <LinearLayout
@@ -168,7 +168,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/home_shutter_title"
-                android:textColor="@color/text_primary_on_dark"
+                android:textColor="@color/surface_card_text_primary"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -179,7 +179,7 @@
                 android:layout_marginTop="6dp"
                 android:gravity="center"
                 android:text="@string/home_shutter_hint"
-                android:textColor="@color/text_secondary_on_dark"
+                android:textColor="@color/surface_card_text_secondary"
                 android:textSize="14sp" />
 
             <FrameLayout
@@ -210,11 +210,11 @@
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:text="@string/home_gallery_button"
-                android:textColor="@color/text_primary_on_dark"
+                android:textColor="@color/surface_card_text_primary"
                 app:icon="@drawable/ic_menu_gallery"
                 app:iconGravity="textStart"
-                app:iconTint="@color/text_primary_on_dark"
-                app:rippleColor="@color/chip_background_tint" />
+                app:iconTint="@color/surface_card_text_primary"
+                app:rippleColor="@color/surface_chip_background" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 

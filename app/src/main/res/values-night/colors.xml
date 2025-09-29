@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="surface_card_background">#CC1E1E1E</color>
+    <color name="surface_card_stroke">#66FFFFFF</color>
+    <color name="surface_card_text_primary">#FFFFFFFF</color>
+    <color name="surface_card_text_secondary">#CCFFFFFF</color>
+    <color name="surface_chip_background">#33FFFFFF</color>
+    <color name="surface_chip_text">#FFFFFFFF</color>
+    <color name="surface_chip_icon_tint">#FFFFFFFF</color>
+    <color name="button_outer_background">#4DFFFFFF</color>
+    <color name="button_outer_stroke">#80FFFFFF</color>
+
+    <color name="toolbar_background_start">#FF44090B</color>
+    <color name="toolbar_background_center">#FF2C0708</color>
+    <color name="toolbar_background_end">#FF150506</color>
+    <color name="toolbar_text_primary">#FFFFFFFF</color>
+    <color name="toolbar_text_secondary">#CCFFFFFF</color>
+    <color name="toolbar_icon_tint">#FFFFFFFF</color>
+
+    <color name="navigation_drawer_background">#FF121212</color>
+    <color name="navigation_item_checked">#FFC62325</color>
+    <color name="navigation_item_default">#FFFFFFFF</color>
+    <color name="navigation_item_disabled">#66FFFFFF</color>
+
+    <color name="fragment_background_start">#FF121212</color>
+    <color name="fragment_background_center">#FF1E1E1E</color>
+    <color name="fragment_background_end">#FF121212</color>
+</resources>
