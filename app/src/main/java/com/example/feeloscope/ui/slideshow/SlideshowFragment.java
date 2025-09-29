@@ -24,6 +24,7 @@ import com.example.feeloscope.services.FaceDetectionListener;
 import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.face.Face;
 
+import java.io.IOException;
 import java.util.List;
 
 public class SlideshowFragment extends Fragment {
@@ -126,7 +127,16 @@ public class SlideshowFragment extends Fragment {
                 binding.videoAnalysisResult.setText(getString(R.string.gallery_analysis_error, e.getLocalizedMessage()));
             }
         } finally {
-            retriever.release();
+            try {
+                retriever.release();
+            } catch (IOException e) {
+                if (binding != null) {
+                    String message = TextUtils.isEmpty(e.getLocalizedMessage())
+                            ? e.getClass().getSimpleName()
+                            : e.getLocalizedMessage();
+                    binding.videoAnalysisResult.setText(getString(R.string.gallery_analysis_error, message));
+                }
+            }
         }
     }
 
