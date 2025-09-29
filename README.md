@@ -50,3 +50,15 @@ sdk.dir=/pfad/zu/deinem/Android/Sdk
 ```
 
 Weitere Informationen findest du in der offiziellen [Android Studio Dokumentation](https://developer.android.com/studio/intro/update#sdk-manager). Wenn der Pfad korrekt gesetzt ist, lässt sich `./gradlew assembleDebug` ohne die Fehlermeldung „SDK location not found“ ausführen.
+
+---
+
+## Git-Tipps für lokale Gradle-Daten
+
+Beim Arbeiten mit dem Projekt erstellt Gradle im Projektstamm einen Ordner `.gradle/` sowie die Datei `local.properties`. Beide Artefakte werden automatisch generiert und sind bewusst im `.gitignore` eingetragen. Falls du Änderungen vom Remote-Repository holen möchtest (`git pull`) und dabei Fehlermeldungen wegen lokaler Änderungen in diesen Dateien erhältst, kannst du sie gefahrlos entfernen oder sichern:
+
+1. **Änderungen sichern (optional):** `git stash push --include-untracked`
+2. **Lokale Gradle-Daten entfernen:** `rm -rf .gradle local.properties`
+3. **Danach erneut pullen:** `git pull`
+
+Beim nächsten Build werden alle benötigten Dateien automatisch neu erzeugt.
