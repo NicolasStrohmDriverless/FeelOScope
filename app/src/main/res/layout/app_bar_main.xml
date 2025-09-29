@@ -15,29 +15,6 @@
         android:elevation="0dp"
         android:paddingTop="8dp">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/app_bar_background"
-            android:minHeight="?attr/actionBarSize"
-            android:paddingStart="24dp"
-            android:paddingTop="18dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="18dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:contentInsetStartWithNavigation="0dp"
-            app:logo="@drawable/logo_ohm"
-            app:navigationIconTint="@color/toolbar_icon_tint"
-            app:subtitle="@string/app_bar_subtitle"
-            app:subtitleTextColor="@color/toolbar_text_secondary"
-            app:title="@string/app_name"
-            app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            app:titleTextColor="@color/toolbar_text_primary" />
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
@@ -55,5 +32,30 @@
         app:rippleColor="@color/surface_chip_background"
         app:srcCompat="@drawable/ic_moon"
         app:tint="@color/text_primary_on_dark" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/app_bar_background"
+        android:minHeight="?attr/actionBarSize"
+        android:paddingStart="24dp"
+        android:paddingTop="18dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="18dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_anchor="@+id/appBarLayout"
+        app:layout_anchorGravity="top|center"
+        app:logo="@drawable/logo_ohm"
+        app:navigationIconTint="@color/toolbar_icon_tint"
+        app:subtitle="@string/app_bar_subtitle"
+        app:subtitleTextColor="@color/toolbar_text_secondary"
+        app:title="@string/app_name"
+        app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        app:titleTextColor="@color/toolbar_text_primary" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
