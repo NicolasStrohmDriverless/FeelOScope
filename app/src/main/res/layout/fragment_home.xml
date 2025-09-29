@@ -113,6 +113,8 @@
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_live_mode"
                     style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:text="@string/home_chip_live"
                     android:textColor="@color/text_secondary_on_dark"
@@ -125,6 +127,8 @@
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_guided"
                     style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="@string/home_chip_guided"
                     android:textColor="@color/text_secondary_on_dark"
                     app:chipBackgroundColor="@color/chip_background_tint"
