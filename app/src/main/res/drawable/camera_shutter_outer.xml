@@ -2,8 +2,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
     <size android:width="96dp" android:height="96dp" />
-    <solid android:color="@color/brand_surface_translucent" />
+    <solid android:color="@color/button_outer_background" />
     <stroke
         android:width="3dp"
-        android:color="@color/brand_surface_stroke" />
+        android:color="@color/button_outer_stroke" />
 </shape>

@@ -29,4 +29,34 @@
     <color name="chip_background_tint">#1AC62325</color>
     <color name="scrim_dark">#80000000</color>
     <color name="divider_tint">#33222222</color>
+
+    <!-- Dynamic surface palette -->
+    <color name="surface_card_background">#F2FFFFFF</color>
+    <color name="surface_card_stroke">#33C62325</color>
+    <color name="surface_card_text_primary">#FF121212</color>
+    <color name="surface_card_text_secondary">#CC121212</color>
+    <color name="surface_chip_background">#19000000</color>
+    <color name="surface_chip_text">#FF121212</color>
+    <color name="surface_chip_icon_tint">#FF121212</color>
+    <color name="button_outer_background">#F2FFFFFF</color>
+    <color name="button_outer_stroke">#33C62325</color>
+
+    <!-- Toolbar + navigation theming -->
+    <color name="toolbar_background_start">#FFC62325</color>
+    <color name="toolbar_background_center">#FFDC3A3C</color>
+    <color name="toolbar_background_end">#FF8F191B</color>
+    <color name="toolbar_text_primary">#FFFFFFFF</color>
+    <color name="toolbar_text_secondary">#E6FFFFFF</color>
+    <color name="toolbar_icon_tint">#FFFFFFFF</color>
+
+    <!-- Navigation drawer -->
+    <color name="navigation_drawer_background">#FFF5F5F5</color>
+    <color name="navigation_item_checked">#FFC62325</color>
+    <color name="navigation_item_default">#FF121212</color>
+    <color name="navigation_item_disabled">#80121212</color>
+
+    <!-- Fragment background gradient -->
+    <color name="fragment_background_start">#FFF5F5F5</color>
+    <color name="fragment_background_center">#FFFFFFFF</color>
+    <color name="fragment_background_end">#FFF5F5F5</color>
 </resources>

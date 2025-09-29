@@ -3,7 +3,7 @@
     <corners android:bottomLeftRadius="28dp" android:bottomRightRadius="28dp" />
     <gradient
         android:angle="0"
-        android:startColor="@color/brand_gradient_start"
-        android:centerColor="@color/brand_gradient_center"
-        android:endColor="@color/brand_gradient_end" />
+        android:startColor="@color/toolbar_background_start"
+        android:centerColor="@color/toolbar_background_center"
+        android:endColor="@color/toolbar_background_end" />
 </shape>
