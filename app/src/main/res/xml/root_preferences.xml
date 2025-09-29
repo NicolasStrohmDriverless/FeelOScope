@@ -21,7 +21,7 @@
         android:defaultValue="70"
         android:min="40"
         android:max="95"
-        android:seekBarIncrement="5"
+        app:seekBarIncrement="5"
         app:showSeekBarValue="true" />
 
 </PreferenceScreen>
