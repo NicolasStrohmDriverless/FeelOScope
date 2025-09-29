@@ -33,6 +33,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.face.Face;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -46,6 +47,7 @@ public class HomeFragment extends Fragment implements FaceDetectionListener {
     private FaceDetectionHelper faceDetectionHelper;
     private ExecutorService cameraExecutor;
     private boolean isAiEnabled = false;
+    private int lensFacing = CameraSelector.LENS_FACING_BACK; // Default to back camera
 
     private final ActivityResultLauncher<String> requestPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
@@ -83,16 +85,23 @@ public class HomeFragment extends Fragment implements FaceDetectionListener {
                 Toast.makeText(requireContext(), messageRes, Toast.LENGTH_SHORT).show();
                 if (isChecked) {
                     binding.faceDetectionResultsTextview.setVisibility(View.VISIBLE);
+                    binding.faceBoundingBoxOverlay.setVisibility(View.VISIBLE);
                 } else {
                     binding.faceDetectionResultsTextview.setVisibility(View.GONE);
                     binding.faceDetectionResultsTextview.setText(""); // Clear previous results
+                    binding.faceBoundingBoxOverlay.clearFaces();
+                    binding.faceBoundingBoxOverlay.setVisibility(View.GONE);
                 }
             }
         });
+
         if (binding.aiToggleSwitch.isChecked()) {
             binding.faceDetectionResultsTextview.setVisibility(View.VISIBLE);
+            binding.faceBoundingBoxOverlay.setVisibility(View.VISIBLE);
         } else {
             binding.faceDetectionResultsTextview.setVisibility(View.GONE);
+            binding.faceBoundingBoxOverlay.setVisibility(View.GONE);
+            binding.faceBoundingBoxOverlay.clearFaces();
         }
 
         ensureCameraPermission();
@@ -122,28 +131,28 @@ public class HomeFragment extends Fragment implements FaceDetectionListener {
                 preview.setSurfaceProvider(previewView.getSurfaceProvider());
 
                 CameraSelector cameraSelector = new CameraSelector.Builder()
-                        .requireLensFacing(CameraSelector.LENS_FACING_BACK)
+                        .requireLensFacing(lensFacing)
                         .build();
 
                 ImageAnalysis imageAnalysis = new ImageAnalysis.Builder()
                         .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+                        // Set target resolution for consistent analysis, adjust as needed
+                        // .setTargetResolution(new android.util.Size(640, 480))
                         .build();
 
                 imageAnalysis.setAnalyzer(cameraExecutor, imageProxy -> {
-                    if (isAiEnabled) {
+                    if (isAiEnabled && binding != null) {
                         @SuppressLint("UnsafeOptInUsageError")
                         Image mediaImage = imageProxy.getImage();
                         if (mediaImage != null) {
                             InputImage image = InputImage.fromMediaImage(mediaImage, imageProxy.getImageInfo().getRotationDegrees());
-                            // Pass imageProxy to the helper, it will be closed in the listener callbacks
                             faceDetectionHelper.process(image, imageProxy);
                         } else {
-                            imageProxy.close(); // Close if mediaImage is null and not passed to ML Kit
+                            imageProxy.close();
                         }
                     } else {
-                        imageProxy.close(); // Close if AI is not enabled
+                        imageProxy.close();
                     }
-                    // DO NOT close imageProxy here anymore, it's handled in callbacks
                 });
 
                 cameraProvider.unbindAll();
@@ -183,6 +192,18 @@ public class HomeFragment extends Fragment implements FaceDetectionListener {
             if (!isAdded() || binding == null || !isAiEnabled) {
                 return;
             }
+            // Update overlay
+            if (binding.faceBoundingBoxOverlay != null) {
+                boolean mirror = lensFacing == CameraSelector.LENS_FACING_FRONT;
+                binding.faceBoundingBoxOverlay.updateFaces(
+                        faces,
+                        image.getWidth(),
+                        image.getHeight(),
+                        imageProxy.getImageInfo().getRotationDegrees(),
+                        mirror
+                );
+            }
+
             StringBuilder resultText = new StringBuilder();
             if (faces.isEmpty()) {
                 resultText.append("No faces detected.");
@@ -191,9 +212,7 @@ public class HomeFragment extends Fragment implements FaceDetectionListener {
                 for (int i = 0; i < faces.size(); i++) {
                     Face face = faces.get(i);
                     resultText.append("  Face ").append(i + 1).append(":\n");
-                    Rect bounds = face.getBoundingBox();
-                    resultText.append("    Bounds: ").append(bounds.flattenToString()).append("\n");
-
+                    // Bounding box text removed, handled by overlay
                     if (face.getSmilingProbability() != null) {
                         resultText.append(String.format("    Smile: %.2f%%\n", face.getSmilingProbability() * 100));
                     }
@@ -213,7 +232,7 @@ public class HomeFragment extends Fragment implements FaceDetectionListener {
                 });
             }
         } finally {
-            imageProxy.close(); // Ensure ImageProxy is closed here
+            imageProxy.close();
         }
     }
 
@@ -222,13 +241,16 @@ public class HomeFragment extends Fragment implements FaceDetectionListener {
         try {
             if (isAdded()) {
                 Log.e(TAG, "Face detection error: ", e);
+                if (binding != null && binding.faceBoundingBoxOverlay != null) {
+                    binding.faceBoundingBoxOverlay.clearFaces();
+                }
                 if (getActivity() != null) {
                     getActivity().runOnUiThread(() ->
                             Toast.makeText(requireContext(), "Face detection error: " + e.getMessage(), Toast.LENGTH_SHORT).show());
                 }
             }
         } finally {
-            imageProxy.close(); // Ensure ImageProxy is closed here
+            imageProxy.close();
         }
     }
 }
