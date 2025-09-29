@@ -25,13 +25,11 @@
 
             <ImageView
                 android:id="@+id/imageView_ohm_logo"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/ohm_logo_description"
-                android:padding="8dp"
-                android:scaleType="centerInside"
+                android:scaleType="fitCenter"
                 app:srcCompat="@drawable/logo_ohm" />
 
         </FrameLayout>
