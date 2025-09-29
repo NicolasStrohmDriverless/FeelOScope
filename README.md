@@ -7,12 +7,9 @@ Die App nutzt die Kamera und ein lokales neuronales Netz, um **offene Augen** un
 
 ## **1. Muss-Anforderungen (Must Have – M)**
 
-Diese Anforderungen sind zwingend erforderlich, um eine funktionsfähige und brauchbare App bereitzustellen. Sie definieren die Kernfunktionalität.
-
 | ID   | Anforderung              | Typ              | Beschreibung |
 | :--- | :----------------------- | :-------------- | :----------- |
 | M-01 | **Kamerazugriff**        | Funktional      | Die App muss auf die Kamera des Android-Geräts zugreifen und den Live-Kamerastream anzeigen können. |
-| M-02 | **Gesichtserkennung**    | Funktional      | Die App muss Gesichter im Kamerabild erkennen und deren Position visuell hervorheben (z. B. durch Bounding Boxes oder Markierungen). |
 | M-03 | **Gesichtszug-Erkennung** | Funktional     | Die App muss innerhalb eines erkannten Gesichts erkennen können, ob **die Augen offen sind** und ob **ein Lächeln vorliegt**. |
 | M-04 | **Zustandsanzeige**      | Funktional      | Für jedes erkannte Gesicht muss der erkannte Zustand („Augen offen“, „Lächeln erkannt“ oder „nicht erkannt“) deutlich angezeigt werden. |
 | M-05 | **Offline-Fähigkeit**    | Funktional      | Das neuronale Netz muss lokal auf dem Gerät gespeichert sein, damit die Gesichtszug-Erkennung **ohne Internetverbindung** funktioniert. |
@@ -21,8 +18,6 @@ Diese Anforderungen sind zwingend erforderlich, um eine funktionsfähige und bra
 ---
 
 ## **2. Soll-Anforderungen (Should Have – S)**
-
-Diese Anforderungen verbessern die Benutzerfreundlichkeit und Qualität der App. Ihre Nichterfüllung führt nicht zum Scheitern des Projekts, reduziert aber den Nutzen.
 
 | ID   | Anforderung              | Typ              | Beschreibung |
 | :--- | :----------------------- | :-------------- | :----------- |
@@ -34,8 +29,6 @@ Diese Anforderungen verbessern die Benutzerfreundlichkeit und Qualität der App.
 ---
 
 ## **3. Kann-Anforderungen (Could Have – K)**
-
-Diese Anforderungen sind optional oder für zukünftige Versionen vorgesehen. Sie bieten zusätzlichen Komfort oder erweiterte Funktionen.
 
 | ID   | Anforderung                 | Typ              | Beschreibung |
 | :--- | :-------------------------- | :-------------- | :----------- |
