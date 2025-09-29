@@ -31,7 +31,7 @@
     <color name="divider_tint">#33222222</color>
 
     <!-- Dynamic surface palette -->
-    <color name="surface_card_background">#F2FFFFFF</color>
+    <color name="surface_card_background">#CCFFFFFF</color>
     <color name="surface_card_stroke">#33C62325</color>
     <color name="surface_card_text_primary">#FF121212</color>
     <color name="surface_card_text_secondary">#CC121212</color>
