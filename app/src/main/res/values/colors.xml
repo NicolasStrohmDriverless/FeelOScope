@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Legacy colors kept for compatibility -->
     <color name="primary_red">#FFC62325</color>
     <color name="primary_red_variant">#FF8F191B</color>
     <color name="primary_red_light">#FFE1585A</color>
@@ -7,4 +8,25 @@
     <color name="dark_gray">#FF222222</color>
     <color name="off_white">#FFF5F5F5</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Updated brand palette -->
+    <color name="brand_gradient_start">#FF2F2E75</color>
+    <color name="brand_gradient_center">#FF3E3278</color>
+    <color name="brand_gradient_end">#FF17162F</color>
+    <color name="brand_background_light">#FFF5F7FD</color>
+    <color name="brand_background_dark">#FF0F1322</color>
+    <color name="brand_surface">#FFFFFFFF</color>
+    <color name="brand_surface_translucent">#CCFFFFFF</color>
+    <color name="brand_surface_stroke">#33FFFFFF</color>
+    <color name="accent_mint">#FF5EE6A0</color>
+    <color name="accent_blue">#FF5BC0F8</color>
+    <color name="accent_lilac">#FFA58BFF</color>
+    <color name="text_primary_on_light">#FF111A3A</color>
+    <color name="text_secondary_on_light">#99343A61</color>
+    <color name="text_primary_on_dark">#FFFFFFFF</color>
+    <color name="text_secondary_on_dark">#CCF3F4FF</color>
+    <color name="icon_on_accent">#FF0F1A2F</color>
+    <color name="chip_background_tint">#1AFFFFFF</color>
+    <color name="scrim_dark">#800A0C1F</color>
+    <color name="divider_tint">#26FFFFFF</color>
 </resources>

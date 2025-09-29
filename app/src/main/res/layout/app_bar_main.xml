@@ -7,32 +7,37 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.FeelOScope.AppBarOverlay">
+        android:background="@android:color/transparent"
+        android:clipToPadding="false"
+        android:elevation="0dp"
+        android:paddingTop="8dp">
 
-        <FrameLayout
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                android:clipToPadding="false"
-                app:popupTheme="@style/Theme.FeelOScope.PopupOverlay" />
-
-            <ImageView
-                android:id="@+id/imageView_ohm_logo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/ohm_logo_description"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/logo_ohm" />
-
-        </FrameLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/app_bar_background"
+            android:minHeight="?attr/actionBarSize"
+            android:paddingStart="24dp"
+            android:paddingTop="18dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="18dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:contentInsetStartWithNavigation="0dp"
+            app:logo="@drawable/logo_ohm"
+            app:logoGravity="center_vertical"
+            app:navigationIconTint="@color/text_primary_on_dark"
+            app:subtitle="@string/app_bar_subtitle"
+            app:subtitleTextColor="@color/text_secondary_on_dark"
+            app:title="@string/app_name"
+            app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:titleTextColor="@color/text_primary_on_dark" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -44,8 +49,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="24dp"
         android:contentDescription="@string/toggle_theme"
-        app:srcCompat="@drawable/ic_moon" />
+        app:backgroundTint="@color/accent_lilac"
+        app:borderWidth="0dp"
+        app:rippleColor="@color/chip_background_tint"
+        app:srcCompat="@drawable/ic_moon"
+        app:tint="@color/text_primary_on_dark" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
