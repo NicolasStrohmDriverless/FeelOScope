@@ -29,7 +29,7 @@
                 android:contentDescription="@string/nav_header_desc"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/logo_ohm"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.FeelOScope"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlayFeelOScope"
                 app:strokeColor="@color/brand_surface_stroke"
                 app:strokeWidth="1dp" />
 

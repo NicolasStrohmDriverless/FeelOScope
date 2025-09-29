@@ -130,7 +130,7 @@
                     android:layout_marginEnd="16dp"
                     android:contentDescription="@string/gallery_preview_content_description"
                     android:scaleType="centerCrop"
-                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.FeelOScope"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlayFeelOScope"
                     app:srcCompat="@drawable/ic_menu_gallery"
                     app:strokeColor="@color/brand_surface_stroke"
                     app:strokeWidth="1dp" />
