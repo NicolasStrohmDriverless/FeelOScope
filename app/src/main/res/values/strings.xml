@@ -13,8 +13,11 @@
     <string name="menu_slideshow">deine Videos nutzen</string>
     <string name="ohm_logo_description">Technische Hochschule Nürnberg logo</string>
     <string name="ai_toggle_label">AI aktivieren</string>
+    <string name="home_creative_toggle_hint">Verleihe deinen Aufnahmen eine Portion Magie.</string>
     <string name="camera_preview_description">Live-Vorschau der Kamera</string>
     <string name="shutter_button_description">Auslöser drücken, um ein Foto aufzunehmen</string>
+    <string name="home_capture_prompt">Bereit, Emotionen einzufangen?</string>
+    <string name="home_capture_hint">Tippe auf den leuchtenden Kreis, um deinen Moment festzuhalten.</string>
     <string name="shutter_placeholder_message">Fotoaufnahme folgt in einem späteren Schritt.</string>
     <string name="camera_permission_denied">Kamerazugriff erforderlich, um die Vorschau anzuzeigen.</string>
     <string name="ai_enabled_message">AI-Unterstützung aktiviert.</string>

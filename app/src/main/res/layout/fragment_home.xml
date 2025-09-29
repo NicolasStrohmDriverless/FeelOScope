@@ -17,57 +17,148 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
+    <View
+        android:id="@+id/preview_overlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/camera_overlay_gradient"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/top_controls"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="end"
-        android:orientation="horizontal"
-        android:paddingStart="16dp"
-        android:paddingTop="24dp"
-        android:paddingEnd="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:paddingStart="20dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="20dp"
         android:paddingBottom="16dp"
+        android:transitionName="top_controls"
+        app:cardBackgroundColor="@color/overlay_card_background"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/overlay_card_stroke"
+        app:strokeWidth="1dp">
 
-        <com.google.android.material.switchmaterial.SwitchMaterial
-            android:id="@+id/ai_toggle_switch"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/ai_toggle_label"
-            android:textColor="@android:color/white"
-            android:checked="false"
-            app:useMaterialThemeColors="true" />
-    </LinearLayout>
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="4dp">
 
-    <LinearLayout
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:contentDescription="@string/app_name"
+                android:padding="4dp"
+                android:src="@drawable/ic_moon"
+                android:tint="@color/off_white" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ai_toggle_label"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:textColor="@color/off_white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_creative_toggle_hint"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textColor="@color/overlay_card_stroke" />
+            </LinearLayout>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/ai_toggle_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:checked="false"
+                android:textColor="@android:color/white"
+                app:useMaterialThemeColors="true" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/bottom_controls"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="24dp"
+        android:layout_marginBottom="40dp"
+        android:paddingStart="32dp"
+        android:paddingTop="28dp"
+        android:paddingEnd="32dp"
+        android:paddingBottom="36dp"
+        app:cardBackgroundColor="@color/overlay_card_background"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/overlay_card_stroke"
+        app:strokeWidth="1dp">
 
-        <FrameLayout
-            android:id="@+id/shutter_button"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:background="@drawable/camera_shutter_outer"
-            android:clickable="true"
-            android:contentDescription="@string/shutter_button_description"
-            android:focusable="true">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <View
-                android:id="@+id/shutter_button_inner"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:background="@drawable/camera_shutter_inner" />
-        </FrameLayout>
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/home_capture_prompt"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/off_white" />
+
+            <FrameLayout
+                android:id="@+id/shutter_button"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/camera_shutter_outer"
+                android:clickable="true"
+                android:contentDescription="@string/shutter_button_description"
+                android:focusable="true">
+
+                <View
+                    android:id="@+id/shutter_button_inner"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/camera_shutter_inner" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:alpha="0.8"
+                android:gravity="center"
+                android:text="@string/home_capture_hint"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textColor="@color/overlay_card_stroke" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
