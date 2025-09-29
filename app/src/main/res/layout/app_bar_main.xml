@@ -11,12 +11,28 @@
         android:layout_height="wrap_content"
         android:theme="@style/Theme.FeelOScope.AppBarOverlay">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.FeelOScope.PopupOverlay" />
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:clipToPadding="false"
+                app:popupTheme="@style/Theme.FeelOScope.PopupOverlay" />
+
+            <ImageView
+                android:id="@+id/imageView_ohm_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/ohm_logo_description"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/logo_ohm" />
+
+        </FrameLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -29,6 +45,7 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:contentDescription="@string/toggle_theme"
+        app:srcCompat="@drawable/ic_moon" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
