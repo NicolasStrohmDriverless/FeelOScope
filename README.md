@@ -38,3 +38,15 @@ Die App nutzt die Kamera und ein lokales neuronales Netz, um **offene Augen** un
 | K-04 | **Frontkamera-Unterstützung** | Funktional    | Die App kann optional auch die Frontkamera für Selfie-Erkennung nutzen. |
 | K-05 | **Dark Mode**              | Nicht-Funktional | Die App sollte einen optionalen Dark Mode unterstützen. |
 | K-06 | **Echtzeit-Verarbeitung**  | Funktional      | Der Kamerastream muss kontinuierlich und in Echtzeit an das neuronale Netz übergeben werden. |
+
+---
+
+## Android SDK Einrichtung
+
+Damit das Projekt gebaut werden kann, muss Gradle den Pfad zum lokalen Android SDK kennen. Dieser Pfad wird **nicht** mehr im Repository hinterlegt. Bitte lege deshalb vor dem ersten Build eine Datei `local.properties` im Projektstamm an (oder exportiere die Variable `ANDROID_HOME`) und trage dort beispielsweise folgenden Inhalt ein:
+
+```
+sdk.dir=/pfad/zu/deinem/Android/Sdk
+```
+
+Weitere Informationen findest du in der offiziellen [Android Studio Dokumentation](https://developer.android.com/studio/intro/update#sdk-manager). Wenn der Pfad korrekt gesetzt ist, lässt sich `./gradlew assembleDebug` ohne die Fehlermeldung „SDK location not found“ ausführen.
