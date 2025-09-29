@@ -2,11 +2,10 @@
     <string name="app_name">FeelOScope</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">FeelOScope</string>
-    <string name="nav_header_subtitle">Emotionen neu gedacht.</string>
-    <string name="nav_header_desc">Menü-Kopfbereich von FeelOScope</string>
-    <string name="nav_header_action">Einstellungen öffnen</string>
-    <string name="action_settings">Einstellungen</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
     <string name="toggle_theme">Toggle dark mode</string>
 
     <string name="menu_home">Kamera</string>
@@ -14,24 +13,15 @@
     <string name="menu_slideshow">deine Videos nutzen</string>
     <string name="ohm_logo_description">Technische Hochschule Nürnberg logo</string>
     <string name="ai_toggle_label">AI aktivieren</string>
-    <string name="home_creative_toggle_hint">Schalte die AI frei, um deine Aufnahmen zu veredeln.</string>
-    <string name="home_creative_toggle_hint_active">AI begleitet deine Aufnahme in Echtzeit.</string>
+    <string name="home_creative_toggle_hint">Verleihe deinen Aufnahmen eine Portion Magie.</string>
     <string name="camera_preview_description">Live-Vorschau der Kamera</string>
     <string name="shutter_button_description">Auslöser drücken, um ein Foto aufzunehmen</string>
     <string name="home_capture_prompt">Bereit, Emotionen einzufangen?</string>
     <string name="home_capture_hint">Tippe auf den leuchtenden Kreis, um deinen Moment festzuhalten.</string>
-    <string name="photo_capture_success">Foto aufgenommen.</string>
-    <string name="photo_capture_error">Das Foto konnte nicht gespeichert werden: %1$s</string>
-    <string name="photo_capture_generic_error">Die Fotoaufnahme ist fehlgeschlagen.</string>
-    <string name="photo_discarded_message">Vorschau verworfen.</string>
+    <string name="shutter_placeholder_message">Fotoaufnahme folgt in einem späteren Schritt.</string>
     <string name="camera_permission_denied">Kamerazugriff erforderlich, um die Vorschau anzuzeigen.</string>
     <string name="ai_enabled_message">AI-Unterstützung aktiviert.</string>
     <string name="ai_disabled_message">AI-Unterstützung deaktiviert.</string>
-    <string name="ai_now_enabled_message">AI-Unterstützung wird auf dieses Foto angewendet.</string>
-    <string name="captured_preview_description">Aufgenommenes Foto zur Vorschau</string>
-    <string name="photo_preview_title">Dein letzter Moment</string>
-    <string name="photo_preview_ai_button">AI für dieses Foto aktivieren</string>
-    <string name="photo_preview_discard">Foto verwerfen</string>
     <string name="gallery_instruction">Wähle ein Bild aus deiner Galerie aus, um es von der AI analysieren zu lassen.</string>
     <string name="gallery_select_button">Bild auswählen</string>
     <string name="gallery_selected_image_content_description">Ausgewähltes Bild für die Analyse</string>
@@ -48,12 +38,4 @@
     <string name="video_selected_content_description">Ausgewähltes Video für die Analyse</string>
     <string name="video_analysis_frame_missing">Das Video konnte nicht analysiert werden. Versuche ein anderes Video.</string>
     <string name="video_analysis_result_template">Analyse des ersten Frames: %1$s</string>
-    <string name="settings_title">Einstellungen</string>
-    <string name="pref_title_ai_default">AI beim Start aktivieren</string>
-    <string name="pref_summary_ai_default">Legt fest, ob der AI-Schalter direkt nach dem Start eingeschaltet ist.</string>
-    <string name="pref_title_auto_ai_after_capture">AI nach Aufnahme automatisch aktivieren</string>
-    <string name="pref_summary_auto_ai_after_capture">Aktiviere die AI-Unterstützung automatisch, sobald ein neues Foto aufgenommen wurde.</string>
-    <string name="pref_title_overlay_opacity">Deckkraft der Steuerkarten</string>
-    <string name="pref_summary_overlay_opacity">Bestimme, wie transparent die Steuerflächen über der Kamera sein sollen.</string>
-    <string name="pref_overlay_opacity_value">Aktuelle Deckkraft: %1$d%%</string>
 </resources>

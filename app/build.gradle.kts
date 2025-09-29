@@ -46,7 +46,6 @@ dependencies {
     implementation(libs.camera.camera2)
     implementation(libs.camera.lifecycle)
     implementation(libs.camera.view)
-    implementation(libs.preference)
     implementation(libs.mlkit.face.detection)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
