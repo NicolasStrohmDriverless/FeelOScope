@@ -19,4 +19,20 @@
     <string name="camera_permission_denied">Kamerazugriff erforderlich, um die Vorschau anzuzeigen.</string>
     <string name="ai_enabled_message">AI-Unterstützung aktiviert.</string>
     <string name="ai_disabled_message">AI-Unterstützung deaktiviert.</string>
+    <string name="gallery_instruction">Wähle ein Bild aus deiner Galerie aus, um es von der AI analysieren zu lassen.</string>
+    <string name="gallery_select_button">Bild auswählen</string>
+    <string name="gallery_selected_image_content_description">Ausgewähltes Bild für die Analyse</string>
+    <string name="gallery_analysis_title">Analyseergebnis</string>
+    <string name="gallery_analysis_placeholder">Noch kein Bild ausgewählt.</string>
+    <string name="gallery_analysis_in_progress">Analyse läuft…</string>
+    <string name="gallery_analysis_result_single">Es wurde ein Gesicht erkannt.</string>
+    <string name="gallery_analysis_result_multiple">Es wurden %1$d Gesichter erkannt.</string>
+    <string name="gallery_analysis_result_none">Es wurden keine Gesichter erkannt.</string>
+    <string name="gallery_analysis_error">Die Analyse konnte nicht durchgeführt werden: %1$s</string>
+    <string name="video_instruction">Wähle ein Video aus deiner Galerie aus. Das erste Videoframe wird zur AI-Analyse verwendet.</string>
+    <string name="video_select_button">Video auswählen</string>
+    <string name="video_analysis_placeholder">Noch kein Video ausgewählt.</string>
+    <string name="video_selected_content_description">Ausgewähltes Video für die Analyse</string>
+    <string name="video_analysis_frame_missing">Das Video konnte nicht analysiert werden. Versuche ein anderes Video.</string>
+    <string name="video_analysis_result_template">Analyse des ersten Frames: %1$s</string>
 </resources>
