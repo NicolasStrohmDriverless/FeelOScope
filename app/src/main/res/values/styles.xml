@@ -10,7 +10,7 @@
         <item name="chipEndPadding">12dp</item>
     </style>
 
-    <style name="ShapeAppearanceOverlay.FeelOScope" parent="@style/ShapeAppearanceOverlay.MaterialComponents.SmallComponent">
+    <style name="ShapeAppearanceOverlay.FeelOScope">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
