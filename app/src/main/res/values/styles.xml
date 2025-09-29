@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.MaterialComponents.Chip.Assist" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="android:textAllCaps">false</item>
+        <item name="chipIconVisible">true</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="chipIconSize">20dp</item>
+        <item name="chipMinHeight">36dp</item>
+        <item name="chipStartPadding">12dp</item>
+        <item name="chipEndPadding">12dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MaterialComponents.Circle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>
