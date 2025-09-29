@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/Theme.FeelOScope.AppBarOverlay">
@@ -25,8 +26,8 @@
 
             <ImageView
                 android:id="@+id/imageView_ohm_logo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="171dp"
+                android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/ohm_logo_description"
                 android:scaleType="fitCenter"
