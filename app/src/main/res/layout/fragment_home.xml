@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
-    tools:context=".ui.home.HomeFragment">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.home.HomeFragment"
+    tools:showIn="@layout/app_bar_main">
 
     <androidx.camera.view.PreviewView
         android:id="@+id/camera_preview"
@@ -57,12 +59,13 @@
             android:paddingHorizontal="4dp">
 
             <ImageView
+                android:id="@+id/ai_toggle_icon"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:contentDescription="@string/app_name"
+                android:contentDescription="@string/ai_toggle_label"
                 android:padding="4dp"
                 android:src="@drawable/ic_moon"
-                android:tint="@color/off_white" />
+                android:tint="@color/overlay_card_text_primary" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -72,18 +75,20 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/ai_toggle_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/ai_toggle_label"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-                    android:textColor="@color/off_white" />
+                    android:textColor="@color/overlay_card_text_primary" />
 
                 <TextView
+                    android:id="@+id/ai_toggle_subtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/home_creative_toggle_hint"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-                    android:textColor="@color/overlay_card_stroke" />
+                    android:textColor="@color/overlay_card_text_secondary" />
             </LinearLayout>
 
             <com.google.android.material.switchmaterial.SwitchMaterial
@@ -92,8 +97,71 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:checked="false"
-                android:textColor="@android:color/white"
                 app:useMaterialThemeColors="true" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/capture_preview_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/overlay_card_background"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_controls"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_controls"
+        app:strokeColor="@color/overlay_card_stroke"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/photo_preview_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/photo_preview_title"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:textColor="@color/overlay_card_text_primary" />
+
+            <ImageView
+                android:id="@+id/captured_preview_image"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="12dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/captured_preview_description"
+                android:scaleType="centerCrop" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ai_action_button"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/photo_preview_ai_button"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_red" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/discard_photo_button"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/photo_preview_discard"
+                android:textAllCaps="false"
+                android:textColor="@color/overlay_card_text_secondary" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -112,6 +180,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/capture_preview_card"
+        app:layout_constraintVertical_bias="1"
         app:strokeColor="@color/overlay_card_stroke"
         app:strokeWidth="1dp">
 
@@ -122,13 +192,14 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/capture_prompt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/home_capture_prompt"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                android:textColor="@color/off_white" />
+                android:textColor="@color/overlay_card_text_primary" />
 
             <FrameLayout
                 android:id="@+id/shutter_button"
@@ -149,6 +220,7 @@
             </FrameLayout>
 
             <TextView
+                android:id="@+id/capture_hint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
@@ -157,7 +229,7 @@
                 android:text="@string/home_capture_hint"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                android:textColor="@color/overlay_card_stroke" />
+                android:textColor="@color/overlay_card_text_secondary" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 

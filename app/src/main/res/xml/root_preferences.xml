@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreferenceCompat
+        android:key="pref_ai_toggle_default"
+        android:title="@string/pref_title_ai_default"
+        android:summary="@string/pref_summary_ai_default"
+        android:defaultValue="false" />
+
+    <SwitchPreferenceCompat
+        android:key="pref_auto_ai_after_capture"
+        android:title="@string/pref_title_auto_ai_after_capture"
+        android:summary="@string/pref_summary_auto_ai_after_capture"
+        android:defaultValue="true" />
+
+    <SeekBarPreference
+        android:key="pref_overlay_opacity"
+        android:title="@string/pref_title_overlay_opacity"
+        android:summary="@string/pref_summary_overlay_opacity"
+        android:defaultValue="70"
+        android:min="40"
+        android:max="95"
+        android:seekBarIncrement="5"
+        app:showSeekBarValue="true" />
+
+</PreferenceScreen>

@@ -14,6 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FeelOScope">
         <activity
+            android:name=".settings.SettingsActivity"
+            android:exported="false"
+            android:label="@string/settings_title"
+            android:theme="@style/Theme.FeelOScope" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
