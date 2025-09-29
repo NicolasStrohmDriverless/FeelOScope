@@ -19,7 +19,17 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="@color/brand_background_light"
         android:fitsSystemWindows="true"
+        android:paddingTop="12dp"
         app:headerLayout="@layout/nav_header_main"
+        app:itemIconTint="@color/nav_item_tint"
+        app:itemRippleColor="@color/chip_background_tint"
+        app:itemShapeAppearance="@style/ShapeAppearance.FeelOScope.NavigationItem"
+        app:itemShapeInsetBottom="8dp"
+        app:itemShapeInsetEnd="16dp"
+        app:itemShapeInsetStart="16dp"
+        app:itemShapeInsetTop="8dp"
+        app:itemTextColor="@color/nav_item_tint"
         app:menu="@menu/activity_main_drawer" />
 </androidx.drawerlayout.widget.DrawerLayout>

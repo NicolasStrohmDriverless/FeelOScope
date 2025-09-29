@@ -2,11 +2,14 @@
     <string name="app_name">FeelOScope</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Hallo, Visionär:in!</string>
+    <string name="nav_header_subtitle">Deine Emotionen warten auf dich</string>
+    <string name="nav_header_tagline">Sammle Bilder, Videos und Geschichten in einem Flow.</string>
+    <string name="nav_header_status">Live-Modus bereit</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="toggle_theme">Toggle dark mode</string>
+    <string name="app_bar_subtitle">Emotionale Einblicke in Echtzeit</string>
 
     <string name="menu_home">Kamera</string>
     <string name="menu_gallery">deine Bilder nutzen</string>
@@ -19,4 +22,33 @@
     <string name="camera_permission_denied">Kamerazugriff erforderlich, um die Vorschau anzuzeigen.</string>
     <string name="ai_enabled_message">AI-Unterstützung aktiviert.</string>
     <string name="ai_disabled_message">AI-Unterstützung deaktiviert.</string>
+
+    <string name="home_title">FeelOScope Live</string>
+    <string name="home_tagline">Fange Emotionen mit deiner Kamera ein.</string>
+    <string name="home_toggle_hint">AI-Analyse aktivieren, um Stimmungen automatisch zu erkennen.</string>
+    <string name="home_chip_live">Live-Bewertung</string>
+    <string name="home_chip_guided">Geführter Modus</string>
+    <string name="home_shutter_title">Moment festhalten</string>
+    <string name="home_shutter_hint">Tippe auf den Auslöser, sobald du bereit bist.</string>
+    <string name="home_gallery_button">Zur Galerie wechseln</string>
+
+    <string name="gallery_description">Importiere Bilder, markiere Emotionen und verwalte deine Sessions.</string>
+    <string name="gallery_chip_recent">Zuletzt genutzt</string>
+    <string name="gallery_chip_filters">Filter anwenden</string>
+    <string name="gallery_chip_share">Teilen</string>
+    <string name="gallery_cta">Neue Bilder importieren</string>
+    <string name="gallery_preview_content_description">Vorschau eines zuletzt hinzugefügten Bildes</string>
+    <string name="gallery_tip_title">Tipp: Kuratiere deine Sammlungen</string>
+    <string name="gallery_tip_body">Erstelle Sets nach Stimmung oder Projekt, um schneller Ergebnisse zu finden.</string>
+    <string name="gallery_secondary_action">Stimmungsstory starten</string>
+
+    <string name="slideshow_description">Kombiniere Clips, füge Audio hinzu und erzähle emotionale Stories.</string>
+    <string name="slideshow_chip_story">Story-Modus</string>
+    <string name="slideshow_chip_transition">Weiche Übergänge</string>
+    <string name="slideshow_chip_music">Musikmix</string>
+    <string name="slideshow_cta">Video hinzufügen</string>
+    <string name="slideshow_preview_content_description">Vorschau eines gespeicherten Videos</string>
+    <string name="slideshow_tip_title">Tipp: Emotionen hervorheben</string>
+    <string name="slideshow_tip_body">Nutze Marker, um besondere Momente für die Analyse zu markieren.</string>
+    <string name="slideshow_secondary_action">Story-Vorlage wählen</string>
 </resources>

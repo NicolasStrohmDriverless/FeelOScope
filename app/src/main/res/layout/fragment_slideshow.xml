@@ -1,22 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fragment_background_gradient"
+    android:padding="24dp"
+    android:clipToPadding="false"
     tools:context=".ui.slideshow.SlideshowFragment">
 
-    <TextView
-        android:id="@+id/text_slideshow"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="vertical"
+        android:clipToPadding="false"
+        android:gravity="center_horizontal"
+        android:paddingBottom="40dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:padding="24dp"
+            app:cardBackgroundColor="@color/brand_surface"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="6dp"
+            app:strokeColor="@color/brand_surface_stroke"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_slideshow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/text_primary_on_light"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    tools:text="Hier kannst du deine Videos nutzen" />
+
+                <TextView
+                    android:id="@+id/slideshow_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/slideshow_description"
+                    android:textColor="@color/text_secondary_on_light"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/slideshow_chip_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:singleLine="false">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_story"
+                        style="@style/Widget.MaterialComponents.Chip.Assist"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/slideshow_chip_story"
+                        android:textColor="@color/text_secondary_on_light"
+                        app:chipBackgroundColor="@color/chip_background_tint"
+                        app:chipIcon="@drawable/ic_menu_slideshow"
+                        app:chipIconTint="@color/text_secondary_on_light" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_transition"
+                        style="@style/Widget.MaterialComponents.Chip.Assist"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/slideshow_chip_transition"
+                        android:textColor="@color/text_secondary_on_light"
+                        app:chipBackgroundColor="@color/chip_background_tint"
+                        app:chipIcon="@drawable/ic_menu_camera"
+                        app:chipIconTint="@color/text_secondary_on_light" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_music"
+                        style="@style/Widget.MaterialComponents.Chip.Assist"
+                        android:text="@string/slideshow_chip_music"
+                        android:textColor="@color/text_secondary_on_light"
+                        app:chipBackgroundColor="@color/chip_background_tint"
+                        app:chipIcon="@drawable/ic_menu_gallery"
+                        app:chipIconTint="@color/text_secondary_on_light" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/slideshow_primary_button"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/slideshow_cta"
+                    android:textAllCaps="false"
+                    android:textColor="@color/icon_on_accent"
+                    app:backgroundTint="@color/accent_blue"
+                    app:cornerRadius="22dp"
+                    app:icon="@drawable/ic_menu_slideshow"
+                    app:iconGravity="textStart"
+                    app:iconTint="@color/icon_on_accent"
+                    app:rippleColor="@color/chip_background_tint" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            app:cardBackgroundColor="@color/brand_surface_translucent"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/brand_surface_stroke"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/slideshow_placeholder"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/slideshow_preview_content_description"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialComponents.Circle"
+                    app:srcCompat="@drawable/ic_menu_slideshow"
+                    app:strokeColor="@color/brand_surface_stroke"
+                    app:strokeWidth="1dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/slideshow_tip_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/slideshow_tip_title"
+                        android:textColor="@color/text_primary_on_light"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/slideshow_tip_body"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/slideshow_tip_body"
+                        android:textColor="@color/text_secondary_on_light"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/slideshow_secondary_button"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/slideshow_secondary_action"
+                        android:textColor="@color/text_primary_on_light"
+                        app:icon="@drawable/ic_menu_camera"
+                        app:iconGravity="textStart"
+                        app:iconTint="@color/text_primary_on_light" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
     tools:context=".ui.home.HomeFragment">
 
     <androidx.camera.view.PreviewView
@@ -17,57 +16,202 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/top_controls"
+    <View
+        android:id="@+id/preview_scrim"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="end"
-        android:orientation="horizontal"
-        android:paddingStart="16dp"
-        android:paddingTop="24dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="16dp"
+        android:layout_height="0dp"
+        android:background="@drawable/home_preview_scrim"
+        android:clickable="false"
+        android:focusable="false"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.switchmaterial.SwitchMaterial
-            android:id="@+id/ai_toggle_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ai_toggle_label"
-            android:textColor="@android:color/white"
-            android:checked="false"
-            app:useMaterialThemeColors="true" />
-    </LinearLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/top_info_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="24dp"
+        android:padding="20dp"
+        app:cardBackgroundColor="@color/brand_surface_translucent"
+        app:cardCornerRadius="26dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/brand_surface_stroke"
+        app:strokeWidth="1dp">
 
-    <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/home_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/home_title"
+                android:textColor="@color/text_primary_on_dark"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/home_subtitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/home_tagline"
+                android:textColor="@color/text_secondary_on_dark"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_title" />
+
+            <TextView
+                android:id="@+id/home_toggle_hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/home_toggle_hint"
+                android:textColor="@color/text_secondary_on_dark"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/ai_toggle_switch"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_subtitle" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/ai_toggle_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="@string/ai_toggle_label"
+                android:textColor="@color/text_primary_on_dark"
+                android:textStyle="bold"
+                android:checked="false"
+                android:showText="false"
+                app:layout_constraintBaseline_toBaselineOf="@id/home_toggle_hint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/home_toggle_hint"
+                app:useMaterialThemeColors="true" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/home_chip_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_toggle_hint">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_live_mode"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/home_chip_live"
+                    android:textColor="@color/text_secondary_on_dark"
+                    app:chipBackgroundColor="@color/chip_background_tint"
+                    app:chipIcon="@drawable/ic_menu_camera"
+                    app:chipIconTint="@color/text_secondary_on_dark"
+                    app:chipStrokeColor="@color/brand_surface_stroke"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_guided"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:text="@string/home_chip_guided"
+                    android:textColor="@color/text_secondary_on_dark"
+                    app:chipBackgroundColor="@color/chip_background_tint"
+                    app:chipIcon="@drawable/ic_menu_slideshow"
+                    app:chipIconTint="@color/text_secondary_on_dark"
+                    app:chipStrokeColor="@color/brand_surface_stroke"
+                    app:chipStrokeWidth="1dp" />
+            </com.google.android.material.chip.ChipGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/bottom_controls"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
         android:padding="24dp"
+        app:cardBackgroundColor="@color/brand_surface_translucent"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/brand_surface_stroke"
+        app:strokeWidth="1dp">
 
-        <FrameLayout
-            android:id="@+id/shutter_button"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:background="@drawable/camera_shutter_outer"
-            android:clickable="true"
-            android:contentDescription="@string/shutter_button_description"
-            android:focusable="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-            <View
-                android:id="@+id/shutter_button_inner"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:background="@drawable/camera_shutter_inner" />
-        </FrameLayout>
-    </LinearLayout>
+            <TextView
+                android:id="@+id/home_shutter_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_shutter_title"
+                android:textColor="@color/text_primary_on_dark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/home_shutter_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="@string/home_shutter_hint"
+                android:textColor="@color/text_secondary_on_dark"
+                android:textSize="14sp" />
+
+            <FrameLayout
+                android:id="@+id/shutter_button"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/camera_shutter_outer"
+                android:clickable="true"
+                android:contentDescription="@string/shutter_button_description"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <View
+                    android:id="@+id/shutter_button_inner"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/shutter_button_background" />
+            </FrameLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/open_gallery_button"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="@string/home_gallery_button"
+                android:textColor="@color/text_primary_on_dark"
+                app:icon="@drawable/ic_menu_gallery"
+                app:iconGravity="textStart"
+                app:iconTint="@color/text_primary_on_dark"
+                app:rippleColor="@color/chip_background_tint" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
